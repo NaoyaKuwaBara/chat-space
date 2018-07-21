@@ -2,10 +2,13 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title ChatSpace
+    %title ChatSpaceproto
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'groups', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+
+    //config/initializers/assets.rbにてscssファイルをプリコンパイル
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render partial: 'layaouts/flash'
+    = render 'layouts/notifications'
     = yield

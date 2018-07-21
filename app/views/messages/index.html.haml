@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=US-ASCII", "http-equiv" =>  "Content-Type"}/
+    %title ChatSpaceProto
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>  true
+    = javascript_include_tag 'application', 'data-turbolinks-track' =>  true
+    = csrf_meta_tags
+    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
+  %body
+    .wrapper
+      = render "shared/side_bar"
+    .chat-title
+      .chat-title_group-box
+        - current_user.groups.each do |group|
+          %p.group__name
+            = group.name
+        %p.member-name
+          Members:
+          = current_user.name
+      = link_to "Edit", edit_group_path(@group), class: "edit-btn"
+    .blank-box
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message', id: "group_messages"
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'img-upper'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'send-btn'
