@@ -1,0 +1,253 @@
+@import "./config/reset";
+@import "./variable";
+@import "./width";
+@import "./position";
+@import "./display";
+@import "./float";
+@import "./font-awesome";
+@import "./config/colors";
+// @import "./config/size";
+// @import "./mixins/vendor_prefix";
+// @import "./modules/chat";
+@import "./modules/flash";
+// @import "./modules/side_bar";
+@import "./modules/user";
+@import "./modules/group";
+// @import "./messages/messages.scss";
+
+html,body {
+  // background-color: $wh;
+  background-color: rgba(245,245,245,0.5);
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.header {
+  height: 65px;
+  width: 260px;
+  min-width: 20px;
+  padding: 0 20px;
+  padding-top: 36px;
+  background-color: #253141;
+  float: left;
+  display: $inbl;
+  position: fixed;
+  .header__name {
+    display: $inbl;
+    float: left;
+    color: $FF;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Ms Sans Serif;
+    letter-spacing: 2px;
+  }
+  .list {
+    // padding: 3px;
+    font-size: 18px;
+    // display: $inbl;
+    // line-height: 0;
+    // float: left;
+    // background-color: pink;
+    .pen {
+      color: $wh;
+      position: fixed;
+      left: 230px;
+    }
+    .cog {
+      color: $wh;
+      position: fixed;
+      left: 260px;
+    }
+  }
+}
+.groups {
+  height: 100%;
+  width: 300px;
+  min-width: 300px;
+  margin-top: 100px;
+  background-color: $c2f;
+  position: fixed;
+  .group {
+    height: 31px;
+    width: 260px;
+    padding: 20px 20px;
+    background-color: $c2f;
+    float: left;
+    .group__name {
+      color: $FF;
+      font-size:15px;
+      line-height: 13px;
+      text-decoration: none;
+    }
+    .group__message {
+      max-width: 260px;
+      padding-top: 5px;
+      color: $FF;
+      font-size: 11px;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+.chat-title {
+  height: 100px;
+  position: fixed;
+  left: 300px;
+  width: $ca2v-3p;
+  min-width: 495px;
+  background-color: $wh;
+  border-bottom: solid 1px #eeeeee;
+  display: $inbl;
+  vertical-align: bottom;
+  .chat-title_group-box {
+    height: 47px;
+    width: calc(100vw - 463px);
+    min-width: 516px;
+    margin: 35px 0 0 40px;
+    float: $lf;
+    .group__name {
+      height: 19px;
+      width: 475px;
+      min-width: 475px;
+      margin-bottom: 15px;
+      color: #333333;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: arial unicode ms;
+      line-height: 15px;
+      letter-spacing: 2px;
+    }
+    .member-name {
+      height: 14px;
+      display: $inbl;
+      color: $c99;
+      font-size: 12px;
+      line-height: 10px;
+    }
+  }
+  .edit-btn {
+    height: 40px;
+    width: 68px;
+    margin: 28px 0  0 11px;
+    background-color: $wh;
+    border: 2px solid$c38;
+    line-height: 40px;
+    text-align: center;
+    display: $inbl;
+    position: $fx;
+    color: $c38;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+.blank-box{
+  height: 46px;
+  width: 100%;
+  min-width: $ca2v-3p;
+  margin-top: 100px;
+  margin-left: 300px;
+  display: $inbl;
+  vertical-align: bottom;
+}
+.message {
+  height: 20px;
+  width: $ca2v-3p;
+  min-width: $ca2v-3p;
+  padding: 0 0 40px 40px;
+  margin-top: 0;
+  margin-left: 300px;
+  background-color: rgba(245,245,245,0.5);
+  .upper-message__user-name {
+    margin-right: 6px;
+    display: $inbl;
+    color: $c43;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .upper-message__date {
+    display: $inbl;
+    color: $c99;
+    font-size: 12px;
+  }
+  .lower-message{
+    margin-top: 10px;
+    p {
+      color: $c43;
+      font-size: 14px;
+    }
+  }
+}
+.message-image {
+  width: $ca2v-3p;
+  min-width: $ca2v-3p;
+  padding: 0 0 40px 40px;
+  margin-top: 0;
+  margin-left: 300px;
+}
+.form {
+  height: 90px;
+  width: $ca2v-3p;
+  background-color: #DDDDDD;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  .form_message {
+    height: 50px;
+    width: calc(100vw - 505px);
+    min-width: 473px;
+    margin: 20px 0 20px 40px;
+    padding-left: 10px;
+    background-color: $wh;
+    resize: none;
+    font-size: 16.5px;
+    float: $lf;
+    border: none;
+    display: $inbl;
+    // line-height: 45px;
+    // text-indent: 1em;
+  }
+  .form_message::placeholder {
+    line-height: 45px;
+  }
+  .hidden {
+    display: none;
+  }
+  .img-upper {
+    margin: 0;
+    background-color: black;
+    color: $wh;
+    position: relative;
+    top: 35px;
+    right: 25px;
+  }
+  .send-btn {
+    height: 50px;
+    width: 102px;
+    padding: 0 20px;
+    margin-top: 0;
+    margin-left: 15px;
+    background-color: $c38;
+    position: fixed;
+    bottom: 20px;
+    color: $wh;
+    border: none;
+    display: $inbl;
+  }
+}
+.blank-box2 {
+  height: 90px;
+  width: 100%;
+  min-width: $ca2v-3p;
+  margin-left: 300px;
+  display: $inbl;
+  vertical-align: bottom;
+}
