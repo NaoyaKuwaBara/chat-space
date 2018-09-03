@@ -15,7 +15,7 @@
 @import "./modules/group";
 // @import "./messages/messages.scss";
 
-body,html {
+html,body {
   // background-color: $wh;
   background-color: rgba(245,245,245,0.5);
   height: 100%;
@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
   background-color: #253141;
   float: left;
   display: $inbl;
+  position: fixed;
   .header__name {
     display: $inbl;
     float: left;
@@ -85,10 +86,14 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
       text-decoration: none;
     }
     .group__message {
+      max-width: 260px;
       padding-top: 5px;
       color: $FF;
       font-size: 11px;
       text-decoration: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }
@@ -109,6 +114,7 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
     margin: 35px 0 0 40px;
     float: $lf;
     .group__name {
+      height: 19px;
       width: 475px;
       min-width: 475px;
       margin-bottom: 15px;
@@ -120,7 +126,7 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
       letter-spacing: 2px;
     }
     .member-name {
-      height: 70px;
+      height: 14px;
       display: $inbl;
       color: $c99;
       font-size: 12px;
@@ -153,7 +159,7 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
   vertical-align: bottom;
 }
 .message {
-  height: 50px;
+  height: 20px;
   width: $ca2v-3p;
   min-width: $ca2v-3p;
   padding: 0 0 40px 40px;
@@ -180,6 +186,13 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
     }
   }
 }
+.message-image {
+  width: $ca2v-3p;
+  min-width: $ca2v-3p;
+  padding: 0 0 40px 40px;
+  margin-top: 0;
+  margin-left: 300px;
+}
 .form {
   height: 90px;
   width: $ca2v-3p;
@@ -199,6 +212,11 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
     float: $lf;
     border: none;
     display: $inbl;
+    // line-height: 45px;
+    // text-indent: 1em;
+  }
+  .form_message::placeholder {
+    line-height: 45px;
   }
   .hidden {
     display: none;
@@ -224,4 +242,12 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, body {
     border: none;
     display: $inbl;
   }
+}
+.blank-box2 {
+  height: 90px;
+  width: 100%;
+  min-width: $ca2v-3p;
+  margin-left: 300px;
+  display: $inbl;
+  vertical-align: bottom;
 }

@@ -14,9 +14,11 @@
     = render @messages
   .form
     = form_for [@group, @message], id: 'new_message' do |f|
-      = f.text_field :content, class: "form_message", placeholder: 'type a message', valu: ""
-      .form__mak
+      = f.text_area :content, class: "form_message", placeholder: 'type a message', value: "", wrap: "hard"
+      = f.hidden_field :group_id, class: "group_id", name: "group_id", :value => @group.id
+      .form__mask
         = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o', class: 'img-upper'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'send-btn'
+  .blank-box2
